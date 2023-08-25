@@ -17,7 +17,7 @@ Esse projeto processa duas imagens diferente e tem como objetivo segmentar os ob
 ![image](/imagens/celula_dilatacao.jpeg)
 
 ### MM's
-![image](/imagens/mm_redimensionada.jpeg)
+![image](/imagens/contornoMisturado.jpeg)
 ![image](/imagens/mm_contorno.jpeg)
 
 
