@@ -4,7 +4,7 @@ Esse projeto processa duas imagens diferente e tem como objetivo segmentar os ob
 ## Imagens de Entrada
 
 ### Células
-![image](/imagens/celulas.jpeg)
+![image](/imagens/celulas.jpg)
 
 ### MM's
 ![image](/imagens/mm_redimensionada.jpeg)
