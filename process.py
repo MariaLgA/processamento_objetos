@@ -4,34 +4,17 @@ import cv2
 import numpy
 
 
-#Threshold
-#Onde img>=T fica branco, senão pretocv2.
-# img_cinza = cv2.cvtColor(redimensionar,cv2.COLOR_BGR2GRAY)
-# T_valor_limite,img_binarizacao = cv2.threshold(img_cinza,50,255,cv2.THRESH_BINARY)
-
-
-# histograma = cv2.calcHist(img,[0],None,[256],[0,256])
-# pyplot.figure()
-# pyplot.plot(histograma)
-# pyplot.xlim([0,256])
-# pyplot.show()
-
-
 #lendo a imagem
-img = cv2.imread("/home/ze/Downloads/imagens_cortadas/mmmistura_org.jpeg")
-#img = cv2.imread("/home/ze/Downloads/imagens_cortadas/mm_org.jpeg")
+img = cv2.imread("/home/ze/Área de Trabalho/p/imagens_inputs/mm.jpeg")
 
 
-#redimensionar
-proporcao = float(img.shape[0]/img.shape[1])
-#new_largura = 1024
-new_largura = 512
-new_altura = int(new_largura*proporcao)
+#redimensionado a imagem
+
+new_largura = 1500
+new_altura = 1200
 nova_dimensao = (new_largura,new_altura)
 redimensionar = cv2.resize(img,nova_dimensao)
-print(proporcao,new_altura,nova_dimensao)
 
-cv2.imwrite("/home/ze/Downloads/imagens_cortadas/mmMisturada_contorno.jpeg",redimensionar)
 
 
 #regra_tres no v e s - 255, no caso/ h vai até 360 degress, então h = h/2
@@ -105,9 +88,9 @@ for i in range(len(vetor)):
 
 # #output da imagem
 
-
+cv2.waitKey(0)
 cv2.imshow("teste",redimensionar)
-cv2.imwrite("/home/ze/Downloads/imagens_cortadas/contornoMisturado.jpeg",redimensionar)
+#cv2.imwrite("/home/ze/Downloads/imagens_cortadas/contornoMisturado.jpeg",redimensionar)
 #cv2.imshow("300",m_marrom)
 #cv2.imshow("menor",mascara_marrom_second)
 # # cv2.imshow("amarelo",mascara_amarelo)
