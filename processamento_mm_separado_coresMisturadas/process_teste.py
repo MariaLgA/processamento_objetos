@@ -34,7 +34,7 @@ or_mask_examples = cv2.bitwise_or(yellow_mask,green_mask)
 or_mask_brow = cv2.bitwise_or(first_brow_mask,second_brow_mask)
 
 # operacao da mascara AND
-and_mask = cv2.bitwise_and(resize,resize,mask = yellow_mask)
+and_mask = cv2.bitwise_and(resize,resize,mask = green_mask)
 
 #cv2.imshow("after",or_mask_brow)
 
@@ -85,5 +85,5 @@ cv2.imshow("teste",yellow_mask)
 
 cv2.waitKey(0)
 
-#cv2.imwrite("./logicaOR_exemplo.jpeg",or_mask_examples)
+cv2.imwrite("./logicaAND_exemplo.jpeg",and_mask)
 
