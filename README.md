@@ -8,7 +8,7 @@ Esse projeto processa duas imagens diferente e tem como objetivo segmentar os ob
 
 ### MM's
 ![image](/processamento_mm_separado_coresMisturadas/imagem_original.jpeg)
-![image](/imagens/mmMisturada_contorno.jpeg)
+![image](/processamentoComRuido/imagem_original.jpeg)
 
 
 ## Imagens de Saída
@@ -17,7 +17,7 @@ Esse projeto processa duas imagens diferente e tem como objetivo segmentar os ob
 ![image](/processamento_CelulasSanguineas/celulas_processadas.jpeg)
 
 ### MM's
-![image](/processamento_mm_separado_coresMisturadas/imagem final processada.jpeg)
+![image](processamento_mm_separado_coresMisturadas/imagem final processada.jpeg)
 ![image](/processamentoComRuido/imagem_apos_processamento.jpeg)
 
 
