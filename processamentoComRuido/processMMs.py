@@ -11,9 +11,6 @@ new_size = (new_width,new_heigth)
 
 resize = cv2.resize(img,new_size)
 
-
-#regra_tres no v e s - 255, no caso/ h vai até 360 degress, então h = h/2
-
 # conversao da imagem de BGR para HSV
 img_hsv = cv2.cvtColor(resize, cv2.COLOR_BGR2HSV)
 
@@ -27,35 +24,33 @@ second_brow_mask= cv2.inRange(img_hsv,(0,15,75),(9,91,170))
 red_mask = cv2.inRange(img_hsv,(150,40,130),(180,255,255))
 orange_mask = cv2.inRange(img_hsv,(3,70,100),(13,255,255))
 
-
-
-
+# operacao da mascara OR - exemplo
 or_mask_examples = cv2.bitwise_or(blue_mask,green_mask)
+
 # operacao da mascara OR com a mascara marrom
 or_mask_brow = cv2.bitwise_or(first_brow_mask,second_brow_mask)
 
-# operacao da mascara AND
+# operacao da mascara AND - exemplo
 and_mask_examples = cv2.bitwise_and(resize,resize,mask = orange_mask)
 
 
 # kernel para usar na erosao e dilatacao
 kernel = numpy.ones((3,3), numpy.uint8) 
 
-#filtros erosao nas mascaras, pois todas elas tem ruidos (pixels que nao se enquandram com o que queremos)
+#operacoes de erosao nas mascaras, pois algumas tem ruidos (pixels que nao se enquandram com o que queremos)
 blue_erode= cv2.erode(blue_mask,kernel,iterations=1)
 yellow_erode = cv2.erode(yellow_mask,kernel,iterations=5)
 brow_erode= cv2.erode(or_mask_brow,kernel,iterations=2)
 red_erode = cv2.erode(red_mask,kernel,iterations=1)
 orange_erode = cv2.erode(orange_mask,kernel,iterations=5)
 
-#filtros de dilatacao nas mascaras
+#operacoes de dilatacao nas mascaras
 blue_dilate = cv2.dilate(blue_erode,kernel,iterations=1)
 gree_dilate = cv2.dilate(green_mask,kernel,iterations=1)
 yellow_dilate = cv2.dilate(yellow_erode,kernel,iterations=6)
 brow_dilate = cv2.dilate(brow_erode,kernel,iterations=4)
 red_dilate = cv2.dilate(red_erode,kernel,iterations=1)
 orange_dilate = cv2.dilate(orange_erode,kernel,iterations=6)
-
 
 
 #achando os contornos dos mms conforme as mascaras de cores e escrita na imagem da quantidade de mms de cada cor foram contados
@@ -79,13 +74,9 @@ for i in range(len(array)):
 
 #output da imagem, waitKey para ficar com a imagem travada na tela ate que algum comando a feche
 cv2.imshow("original",resize)
-cv2.imwrite("./imagem_apos_processamento.jpeg",resize)
-
-
-
-#cv2.imshow("imagem  blue",and_mask)
-#cv2.imshow("imagem yellow",second_brow_mask)
-
 cv2.waitKey(0)
+
+#salvar imagem
+cv2.imwrite("./imagem_apos_processamento.jpeg",resize)
 
 
