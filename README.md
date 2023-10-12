@@ -4,21 +4,21 @@ Esse projeto processa duas imagens diferente e tem como objetivo segmentar os ob
 ## Imagens de Entrada
 
 ### Células
-![image](/imagens/celulas.jpg)
+![image](/processamento_CelulasSanguineas/img_original.jpg)
 
 ### MM's
-![image](/imagens/mm_redimensionada.jpeg)
+![image](/processamento_mm_separado_coresMisturadas/imagem_original.jpeg)
 ![image](/imagens/mmMisturada_contorno.jpeg)
 
 
 ## Imagens de Saída
 
 ### Células
-![image](/imagens/celula_dilatacao.jpeg)
+![image](/processamento_CelulasSanguineas/celulas_processadas.jpeg)
 
 ### MM's
-![image](/imagens/contornoMisturado.jpeg)
-![image](/imagens/mm_contorno.jpeg)
+![image](/processamento_mm_separado_coresMisturadas/imagem final processada.jpeg)
+![image](/processamentoComRuido/imagem_apos_processamento.jpeg)
 
 
 
